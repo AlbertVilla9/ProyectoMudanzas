@@ -1,5 +1,6 @@
 package com.example.proyectomudanzas
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
@@ -18,5 +19,10 @@ class MainActivity : AppCompatActivity() {
             .load("https://fedem.es/wp-content/uploads/2017/02/mudanzas-fedem-logo-empresa-mudanzas-sevilla-madrid.jpg")
             .centerCrop()
             .into(binding.imgLogin)
+
+        binding.loginbtn.setOnClickListener{
+            val i = Intent(this, MenuActivity::class.java)
+            startActivity(i)
+        }
     }
 }

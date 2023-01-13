@@ -1,46 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MenuActivity">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_buscar"
-        android:layout_margin="5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="350dp"
+        android:id="@+id/searchbar"
+        android:layout_width="300dp"
         android:layout_height="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_margin="5dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Buscar"
+            android:tooltipText="@drawable/ic_buscar"
             android:gravity="left"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="Buscar"
+        android:gravity="right"
+        app:layout_constraintStart_toEndOf="@id/searchbar"
+        app:layout_constraintBottom_toBottomOf="@id/searchbar"
+        android:layout_marginLeft="5dp"/>
 
-    <com.google.android.material.bottomappbar.BottomAppBar
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:menu="@menu/nav_menu"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:ignore="BottomAppBar">
+        app:layout_constraintBottom_toBottomOf="parent">
 
-    </com.google.android.material.bottomappbar.BottomAppBar>
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        tools:listitem="@layout/item_contenedor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchbar"
+        app:layout_constraintBottom_toTopOf="@id/nav"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
