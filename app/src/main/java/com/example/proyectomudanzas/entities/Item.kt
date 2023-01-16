@@ -1,4 +1,4 @@
-package com.example.proyectomudanzas
+package com.example.proyectomudanzas.entities
 
 import android.media.Image
 

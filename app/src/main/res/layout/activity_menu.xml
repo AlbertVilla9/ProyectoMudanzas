@@ -54,4 +54,14 @@
         app:layout_constraintBottom_toTopOf="@id/nav"
         />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/nav"
+        android:layout_margin="10dp"
+        android:tint="@color/magenta"
+        android:backgroundTint="@color/magenta"
+        android:src="@drawable/ic_baseline_add_circle_24"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

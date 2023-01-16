@@ -1,4 +1,4 @@
-package com.example.proyectomudanzas
+package com.example.proyectomudanzas.entities
 
 data class Usuario(
     var nombre: String,
