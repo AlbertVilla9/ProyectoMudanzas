@@ -7,15 +7,56 @@
     tools:context=".ContenedorActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
+        <TextView
+            android:id="@+id/numcontenedor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="10"
+            android:textSize="60dp"
+            android:layout_margin="10dp"/>
+        <TextView
+            android:id="@+id/usuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/numcontenedor"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/items"
+            android:text="Usuario"
+            android:textSize="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:id="@+id/items"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/usuario"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Items"
+            android:textSize="30dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/info"
+        app:layout_constraintBottom_toTopOf="@id/nav"
+        tools:listitem="@layout/item_item"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav"
