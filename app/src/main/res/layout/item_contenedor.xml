@@ -24,22 +24,36 @@
             android:layout_margin="10dp"/>
 
         <TextView
+            android:id="@+id/ubicacion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Usuario"
+            android:text="Ubicacion"
             android:textSize="20dp"
             app:layout_constraintStart_toEndOf="@id/idContenedor"
             app:layout_constraintTop_toTopOf="@id/idContenedor"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            android:layout_marginLeft="20dp"/>
 
         <TextView
+            android:id="@+id/referencia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Items"
+            android:text="Referencia"
             android:textSize="20dp"
             app:layout_constraintStart_toEndOf="@id/idContenedor"
             app:layout_constraintBottom_toBottomOf="@id/idContenedor"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            android:layout_marginLeft="20dp"
+            />
+
+        <TextView
+            android:id="@+id/fecha_alta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Fecha alta"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginRight="20dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

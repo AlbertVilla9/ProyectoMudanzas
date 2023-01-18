@@ -2,6 +2,10 @@ package com.example.proyectomudanzas.entities
 
 data class Contenedor(
     var id: Int,
-    var dueño: String,
-    var items: List<Item>
-)
+    var ubicacion: String,
+    var referencia: String,
+    var fecha_alta: String
+) {
+
+
+}

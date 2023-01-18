@@ -3,9 +3,18 @@ package com.example.proyectomudanzas.entities
 import android.media.Image
 
 data class Item(
-    var nombre: String,
+    var id: Int,
+    var titulo: String,
+    var descripcion: String,
     var alto: Int,
     var ancho: Int,
-    var descripcion: String,
-    var imagen: Image
+    var fecha_alta: String,
+    var preferencias: String,
+    var cantiddad: Int,
+    var precio: Int,
+    var contenedor: Contenedor,
+    var color: Int,
+    var material: Int,
+    var estado_item: Int,
+    var empleados: Usuario
 )

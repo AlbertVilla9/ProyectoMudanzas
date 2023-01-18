@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
 import com.example.proyectomudanzas.databinding.ActivityMainBinding
+import com.example.proyectomudanzas.mainModule.MenuActivity
 
 class MainActivity : AppCompatActivity() {
 
