@@ -5,7 +5,4 @@ data class Contenedor(
     var ubicacion: String,
     var referencia: String,
     var fecha_alta: String
-) {
-
-
-}
+)

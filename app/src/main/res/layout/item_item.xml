@@ -39,18 +39,34 @@
             android:layout_marginRight="10dp"/>
 
         <TextView
-            android:id="@+id/medidas"
+            android:id="@+id/alto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="medidas"
+            android:text="alto"
             app:layout_constraintStart_toStartOf="@id/linea"
             app:layout_constraintTop_toBottomOf="@id/linea"
             />
-
         <TextView
+            android:id="@+id/separador"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/medidas"
+            android:text=" x "
+            app:layout_constraintStart_toEndOf="@id/alto"
+            app:layout_constraintTop_toBottomOf="@id/linea"
+            android:layout_marginHorizontal="5dp"/>
+        <TextView
+            android:id="@+id/ancho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ancho"
+            app:layout_constraintStart_toEndOf="@id/separador"
+            app:layout_constraintTop_toBottomOf="@id/linea"/>
+
+        <TextView
+            android:id="@+id/descripcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/alto"
             app:layout_constraintStart_toEndOf="@id/imagen"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -6,13 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectomudanzas.R
-import com.example.proyectomudanzas.databinding.ItemContenedorBinding
+import com.example.proyectomudanzas.databinding.ItemItemBinding
 import com.example.proyectomudanzas.entities.Contenedor
+import com.example.proyectomudanzas.entities.Item
 
-class ContenedorAdapter(
-    private var contenedores: MutableList<Contenedor>,
+class ItemAdapter(
+    private var items: MutableList<Item>,
     private var listener: OnClickListener
-    ): RecyclerView.Adapter<ContenedorAdapter.ViewHolder>() {
+):
+RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
 
     private lateinit var mContext: Context
 
@@ -25,31 +27,31 @@ class ContenedorAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val contenedor = contenedores.get(position)
+        val item = items.get(position)
 
         with(holder) {
-            setListener(contenedor)
+            setListener(item)
 
-            binding.idContenedor.text = contenedor.id.toString()
-            binding.ubicacion.text = contenedor.ubicacion
-            binding.referencia.text = contenedor.referencia
-            binding.fechaAlta.text = contenedor.fecha_alta
+            binding.nombremueble.text = item.titulo
+            binding.alto.text = item.alto.toString()
+            binding.ancho.text = item.ancho.toString()
+            binding.descripcion.text = item.descripcion
         }
     }
 
-    override fun getItemCount(): Int = contenedores.size
+    override fun getItemCount(): Int = items.size
 
-    fun setContenedores(contenedores: MutableList<Contenedor>) {
-        this.contenedores = contenedores
+    fun setItems(items: MutableList<Item>) {
+        this.items = items
         notifyDataSetChanged()
     }
 
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        val binding = ItemContenedorBinding.bind(view)
+        val binding = ItemItemBinding.bind(view)
 
-        fun setListener(contenedor: Contenedor) {
+        fun setListener(item: Item) {
             binding.root.setOnClickListener {
-                listener.onClick(contenedor)
+                listener.onClick(item)
             }
         }
     }

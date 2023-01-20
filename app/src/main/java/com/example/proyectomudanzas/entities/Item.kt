@@ -1,7 +1,5 @@
 package com.example.proyectomudanzas.entities
 
-import android.media.Image
-
 data class Item(
     var id: Int,
     var titulo: String,
@@ -16,5 +14,5 @@ data class Item(
     var color: Int,
     var material: Int,
     var estado_item: Int,
-    var empleados: Usuario
+    var empleados: Empleado
 )
