@@ -2,6 +2,7 @@ package com.example.proyectomudanzas.entities
 
 data class Item(
     var id: Int,
+    var imagenes: MutableList<Imagen>,
     var titulo: String,
     var descripcion: String,
     var alto: Int,

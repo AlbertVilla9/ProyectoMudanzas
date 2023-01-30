@@ -3,10 +3,8 @@ package com.example.proyectomudanzas.mainModule
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.proyectomudanzas.ContenedorActivity
 import com.example.proyectomudanzas.databinding.ActivityMenuBinding
 import com.example.proyectomudanzas.entities.Contenedor
 import com.example.proyectomudanzas.entities.Item
@@ -35,7 +33,7 @@ class MenuActivity : AppCompatActivity(), OnClickListener {
     private fun setupViewModel() {
         menuViewModel = ViewModelProvider(this).get(MenuViewModel::class.java)
         menuViewModel.getContenedores().observe(this) {
-                contendores -> contenedorAdapter.setContenedores(contendores)
+                contenedores -> contenedorAdapter.setContenedores(contenedores)
         }
 
     }

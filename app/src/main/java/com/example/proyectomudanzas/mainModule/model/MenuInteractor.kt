@@ -3,7 +3,6 @@ package com.example.proyectomudanzas.mainModule.model
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonArrayRequest
 import com.example.proyectomudanzas.MudanzasApplication
-import com.example.proyectomudanzas.database.MudanzasAPI
 import com.example.proyectomudanzas.entities.Contenedor
 import com.example.proyectomudanzas.utils.Constants
 import com.google.gson.Gson

@@ -1,16 +1,15 @@
-package com.example.proyectomudanzas
+package com.example.proyectomudanzas.mainModule
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.proyectomudanzas.databinding.ActivityContenedorBinding
-import com.example.proyectomudanzas.databinding.ActivityMenuBinding
 import com.example.proyectomudanzas.entities.Contenedor
 import com.example.proyectomudanzas.entities.Item
-import com.example.proyectomudanzas.mainModule.adapter.ContenedorAdapter
 import com.example.proyectomudanzas.mainModule.adapter.ItemAdapter
 import com.example.proyectomudanzas.mainModule.adapter.OnClickListener
+import com.example.proyectomudanzas.mainModule.viewModel.ItemViewModel
 import com.example.proyectomudanzas.mainModule.viewModel.MenuViewModel
 
 class ContenedorActivity : AppCompatActivity(), OnClickListener {
@@ -18,6 +17,7 @@ class ContenedorActivity : AppCompatActivity(), OnClickListener {
     private lateinit var binding: ActivityContenedorBinding
     private lateinit var itemAdapter: ItemAdapter
     private lateinit var mGridLayout: GridLayoutManager
+    private lateinit var itemViewModel: ItemViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +27,17 @@ class ContenedorActivity : AppCompatActivity(), OnClickListener {
         var id = intent.getIntExtra("id", 1)
 
         binding.numcontenedor.text = id.toString()
+
+        setupRecyclerView()
+        setupViewModel()
+    }
+
+    private fun setupViewModel() {
+        itemViewModel = ViewModelProvider(this).get(ItemViewModel::class.java)
+        itemViewModel.getItems().observe(this) {
+                items -> itemAdapter.setItems(items)
+        }
+
     }
 
     private fun setupRecyclerView() {
