@@ -9,11 +9,11 @@ data class Item(
     var ancho: Int,
     var fecha_alta: String,
     var preferencias: String,
-    var cantiddad: Int,
-    var precio: Int,
-    var contenedor: Contenedor,
+    var cantidad: Int,
+    var precio: Double,
+    var contenedor: Int,
     var color: Int,
     var material: Int,
     var estado_item: Int,
-    var empleados: Empleado
+    var empleados: Int
 )

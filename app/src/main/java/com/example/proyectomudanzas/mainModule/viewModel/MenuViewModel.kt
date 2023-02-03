@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.proyectomudanzas.entities.Contenedor
 import com.example.proyectomudanzas.mainModule.model.MenuInteractor
-import com.example.proyectomudanzas.utils.Constants
+import com.example.proyectomudanzas.database.utils.Constants
 
 class MenuViewModel: ViewModel() {
     private var contenedoresList: MutableList<Contenedor>

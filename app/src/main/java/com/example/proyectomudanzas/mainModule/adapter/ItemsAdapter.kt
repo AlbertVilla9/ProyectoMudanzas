@@ -7,21 +7,20 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectomudanzas.R
 import com.example.proyectomudanzas.databinding.ItemItemBinding
-import com.example.proyectomudanzas.entities.Contenedor
 import com.example.proyectomudanzas.entities.Item
 
-class ItemAdapter(
+class ItemsAdapter(
     private var items: MutableList<Item>,
     private var listener: OnClickListener
 ):
-RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
+RecyclerView.Adapter<ItemsAdapter.ViewHolder>() {
 
     private lateinit var mContext: Context
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         mContext = parent.context
 
-        val view = LayoutInflater.from(mContext).inflate(R.layout.item_contenedor, parent, false)
+        val view = LayoutInflater.from(mContext).inflate(R.layout.item_item, parent, false)
 
         return ViewHolder(view)
     }

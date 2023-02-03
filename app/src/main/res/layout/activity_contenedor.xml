@@ -4,47 +4,68 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/contenedorActivity"
     tools:context=".mainModule.ContenedorActivity">
+
+    <FrameLayout
+        android:id="@+id/itemFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/nav"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/info"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
-            android:id="@+id/numcontenedor"
+            android:id="@+id/idContenedor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             android:text="10"
             android:textSize="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_margin="10dp"/>
+
         <TextView
-            android:id="@+id/usuario"
+            android:id="@+id/ubicacion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/numcontenedor"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/items"
-            android:text="Usuario"
-            android:textSize="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"/>
+            android:text="Ubicacion"
+            android:textSize="20dp"
+            app:layout_constraintStart_toEndOf="@id/idContenedor"
+            app:layout_constraintTop_toTopOf="@id/idContenedor"
+            android:layout_marginLeft="20dp"/>
+
         <TextView
-            android:id="@+id/items"
+            android:id="@+id/referencia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/usuario"
-            app:layout_constraintTop_toTopOf="parent"
+            android:text="Referencia"
+            android:textSize="20dp"
+            app:layout_constraintStart_toEndOf="@id/idContenedor"
+            app:layout_constraintBottom_toBottomOf="@id/idContenedor"
+            android:layout_marginLeft="20dp"
+            />
+
+        <TextView
+            android:id="@+id/fecha_alta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Fecha alta"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="Items"
-            android:textSize="30dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginRight="20dp"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

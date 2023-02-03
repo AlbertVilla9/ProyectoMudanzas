@@ -1,10 +1,10 @@
-package com.example.proyectomudanzas.utils
+package com.example.proyectomudanzas.database.utils
 
 object Constants {
     const val URL_GENERAL = "http://apicei14.ieslasenia.org"
     const val CONTENEDORES_PATH = "/contenedores"
-    const val ITEMS_PATH = "/items"
-    const val ITEMS_CONTENEDOR_PATH = "/contenedor/items?pk=1"
+    const val ITEM_PATH = "/item?pk={id}"
+    const val ITEMS_CONTENEDOR_PATH = "/contenedor/items?pk={id}"
 
    // const val STATUS_PROPERTY = "status"
    // const val STORES_PROPERTY = "stores"

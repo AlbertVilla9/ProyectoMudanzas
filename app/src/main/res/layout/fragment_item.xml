@@ -1,50 +1,269 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ItemFragment">
+    tools:context=".editModule.ItemFragment"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <ImageView
-            android:layout_width="300dp"
-            android:layout_height="200dp"
+            android:id="@+id/imagen"
+            android:layout_width="350dp"
+            android:layout_height="150dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="20dp"/>
 
-        <EditText
-            android:id="@+id/itemId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Id"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/itemTitulo"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="Titulo"
-            app:layout_constraintStart_toEndOf="@id/itemId"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-        <EditText
-            android:id="@+id/itemAlto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Alto"
-            app:layout_constraintStart_toEndOf="@id/itemTitulo"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            android:inputType="text"
+            app:layout_constraintStart_toStartOf="@id/imagen"
+            app:layout_constraintTop_toBottomOf="@id/imagen"
+            app:layout_constraintEnd_toEndOf="@id/imagen"
+            android:layout_marginVertical="10dp"/>
 
         <TextView
+            android:id="@+id/alto"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Alto:"
+            android:textSize="20dp"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@id/itemTitulo"
+            app:layout_constraintTop_toBottomOf="@id/itemTitulo"
+            app:layout_constraintBottom_toBottomOf="@id/itemAlto"
+            android:layout_marginTop="10dp"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/itemAlto"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:hint="10cm"
+            android:inputType="number"
+            app:layout_constraintStart_toEndOf="@id/alto"
+            app:layout_constraintEnd_toStartOf="@id/separador"
+            app:layout_constraintTop_toTopOf="@id/alto"
+            android:layout_marginHorizontal="10dp"/>
+
+        <TextView
+            android:id="@+id/separador"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="X"
+            android:textSize="20dp"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@id/itemAlto"
+            app:layout_constraintEnd_toStartOf="@id/itemAncho"
+            app:layout_constraintTop_toTopOf="@id/alto"
+            />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/itemAncho"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:hint="10cm"
+            android:inputType="number"
+            app:layout_constraintStart_toEndOf="@id/separador"
+            app:layout_constraintEnd_toStartOf="@id/ancho"
+            app:layout_constraintTop_toTopOf="@id/separador"
+            android:layout_marginHorizontal="10dp"/>
+
+        <TextView
+            android:id="@+id/ancho"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text=":Ancho"
+            android:textSize="20dp"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="@id/imagen"
+            app:layout_constraintTop_toTopOf="@id/alto"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/fecha"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginVertical="10dp"
+            android:gravity="center"
+            android:text="Fecha Alta:"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="@id/imagen"
+            app:layout_constraintTop_toBottomOf="@id/itemAlto"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fecha_alta"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:hint="4/4/4"
+            app:layout_constraintStart_toEndOf="@id/fecha"
+            app:layout_constraintTop_toTopOf="@id/fecha"
+            app:layout_constraintEnd_toEndOf="@id/imagen"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/precio"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Precio:"
+            android:gravity="center"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="@id/imagen"
+            app:layout_constraintTop_toBottomOf="@id/fecha_alta"
+            android:layout_marginVertical="10dp"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/itemPrecio"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:hint="20€"
+            android:inputType="number"
+            app:layout_constraintStart_toEndOf="@id/precio"
+            app:layout_constraintTop_toTopOf="@id/precio"
+            android:layout_marginHorizontal="10dp"/>
+
+        <TextView
+            android:id="@+id/cantidad"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:text="Cantidad:"
+            app:layout_constraintStart_toEndOf="@id/itemPrecio"
+            app:layout_constraintTop_toTopOf="@id/itemPrecio"
+            android:layout_marginHorizontal="10dp"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/itemCantidad"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:inputType="number"
+            app:layout_constraintStart_toEndOf="@id/cantidad"
+            app:layout_constraintTop_toTopOf="@id/cantidad"
+            app:layout_constraintEnd_toEndOf="@id/imagen"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/color"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Color:"
+            android:textSize="20dp"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@id/imagen"
+            app:layout_constraintTop_toBottomOf="@id/precio"
+            android:layout_marginVertical="10dp"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/itemColor"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:inputType="number"
+            app:layout_constraintStart_toEndOf="@id/color"
+            app:layout_constraintTop_toTopOf="@id/color"
+            android:layout_marginHorizontal="10dp"/>
+
+        <TextView
+            android:id="@+id/contenedor"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Contenedor:"
+            android:textSize="20dp"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@id/itemColor"
+            app:layout_constraintTop_toTopOf="@id/itemColor"
+            android:layout_marginHorizontal="10dp"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            app:layout_constraintStart_toEndOf="@id/contenedor"
+            app:layout_constraintTop_toTopOf="@id/contenedor"
+            app:layout_constraintEnd_toEndOf="@id/imagen"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/material"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:textSize="20dp"
+            android:text="Material:"
+            android:gravity="center"
+            android:inputType="number"
+            app:layout_constraintStart_toStartOf="@id/imagen"
+            app:layout_constraintTop_toBottomOf="@id/color"
+            android:layout_marginVertical="10dp"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/itemMaterial"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            app:layout_constraintStart_toEndOf="@id/material"
+            app:layout_constraintTop_toTopOf="@id/material"
+            android:layout_marginHorizontal="10dp"/>
+
+        <TextView
+            android:id="@+id/estado"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:textSize="20dp"
+            android:text="Estado:"
+            app:layout_constraintStart_toEndOf="@id/itemMaterial"
+            app:layout_constraintTop_toTopOf="@id/itemMaterial"
+            android:gravity="center"
+            android:layout_marginHorizontal="10dp"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/itemEstado"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            app:layout_constraintStart_toEndOf="@id/estado"
+            app:layout_constraintTop_toTopOf="@id/estado"
+            app:layout_constraintEnd_toEndOf="@id/imagen"
+            android:layout_marginLeft="10dp"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/itemPreferencias"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:hint="Preferencias"
+            app:layout_constraintStart_toStartOf="@id/imagen"
+            app:layout_constraintTop_toBottomOf="@id/estado"
+            app:layout_constraintEnd_toEndOf="@id/imagen"
+            android:layout_marginVertical="10dp"/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/itemDescripcion"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:hint="Descripcion"
+            android:inputType="text"
+            app:layout_constraintStart_toStartOf="@id/imagen"
+            app:layout_constraintTop_toBottomOf="@id/itemPreferencias"
+            app:layout_constraintEnd_toEndOf="@id/imagen"
+            android:layout_marginVertical="10dp"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="X"/>
+            android:text="Modificar"
+            app:layout_constraintStart_toStartOf="@id/imagen"
+            app:layout_constraintEnd_toEndOf="@id/imagen"
+            app:layout_constraintTop_toBottomOf="@id/itemDescripcion"
+            android:layout_marginVertical="10dp"/>
+
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</FrameLayout>
+</ScrollView>

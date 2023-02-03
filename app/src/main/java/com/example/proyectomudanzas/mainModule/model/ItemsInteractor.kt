@@ -4,13 +4,13 @@ import com.android.volley.Request
 import com.android.volley.toolbox.JsonArrayRequest
 import com.example.proyectomudanzas.MudanzasApplication
 import com.example.proyectomudanzas.entities.Item
-import com.example.proyectomudanzas.utils.Constants
+import com.example.proyectomudanzas.database.utils.Constants
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
-class ItemInteractor {
-    fun getItems(callback: (MutableList<Item>) -> Unit) {
-        val url = Constants.URL_GENERAL + Constants.ITEMS_PATH
+class ItemsInteractor {
+    fun getItems(id: Int, callback: (MutableList<Item>) -> Unit) {
+        val url = Constants.URL_GENERAL + Constants.ITEMS_CONTENEDOR_PATH.replace("{id}", id.toString())
 
         var itemList = mutableListOf<Item>()
 
