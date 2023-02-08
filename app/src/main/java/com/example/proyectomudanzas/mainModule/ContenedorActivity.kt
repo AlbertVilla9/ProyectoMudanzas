@@ -3,7 +3,6 @@ package com.example.proyectomudanzas.mainModule
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.proyectomudanzas.editModule.ItemFragment
@@ -23,8 +22,7 @@ class ContenedorActivity : AppCompatActivity(), OnClickListener {
     private lateinit var itemAdapter: ItemsAdapter
     private lateinit var mGridLayout: GridLayoutManager
     private lateinit var itemsViewModel: ItemsViewModel
-    private lateinit var FragmentManager: FragmentManager
-    private lateinit var ItemViewModel: ItemViewModel
+    private lateinit var itemViewModel: ItemViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,6 +64,7 @@ class ContenedorActivity : AppCompatActivity(), OnClickListener {
     }
 
     private fun setupViewModel(contenedorId: Int) {
+        itemViewModel = ViewModelProvider(this).get(ItemViewModel::class.java)
         itemsViewModel = ViewModelProvider(this).get(ItemsViewModel::class.java)
         itemsViewModel.setContenedorId(contenedorId)
         itemsViewModel.getItems().observe(this) {
@@ -74,8 +73,10 @@ class ContenedorActivity : AppCompatActivity(), OnClickListener {
 
     }
 
-    private fun launchItemFragment(item: Item = Item()) {
-        ItemViewModel.setItemSelected(item)
+
+    private fun launchItemFragment(item: Item) {
+
+        itemViewModel.setItemSelected(item)
 
         val fragment = ItemFragment()
         val fragmentManager = supportFragmentManager
@@ -102,7 +103,7 @@ class ContenedorActivity : AppCompatActivity(), OnClickListener {
 
     // Al hacer click en un item del recyclerView
     override fun onClick(item: Item) {
-        launchItemFragment()
+        launchItemFragment(item)
     }
     override fun onClick(contenedor: Contenedor) {}
 }

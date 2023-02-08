@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.proyectomudanzas.R
 import com.example.proyectomudanzas.databinding.ItemItemBinding
 import com.example.proyectomudanzas.entities.Item
@@ -35,6 +36,12 @@ RecyclerView.Adapter<ItemsAdapter.ViewHolder>() {
             binding.alto.text = item.alto.toString()
             binding.ancho.text = item.ancho.toString()
             binding.descripcion.text = item.descripcion
+
+            Glide.with(itemView)
+                .load(item.imagenes)
+                .centerCrop()
+                .into(binding.imagen)
+
         }
     }
 

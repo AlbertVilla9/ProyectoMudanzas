@@ -5,6 +5,8 @@ object Constants {
     const val CONTENEDORES_PATH = "/contenedores"
     const val ITEM_PATH = "/item?pk={id}"
     const val ITEMS_CONTENEDOR_PATH = "/contenedor/items?pk={id}"
+    const val ITEMS_IMGEN_PATH = "/imagen?pk={id}"
+    const val ITEM_UPDATE_PATH = "/item?pk={id}"
 
    // const val STATUS_PROPERTY = "status"
    // const val STORES_PROPERTY = "stores"

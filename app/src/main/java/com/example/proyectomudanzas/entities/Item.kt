@@ -15,5 +15,5 @@ data class Item(
     var color: Int,
     var material: Int,
     var estado_item: Int,
-    var empleados: Int
+    var empleado: Int
 )

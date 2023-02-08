@@ -185,6 +185,7 @@
             android:layout_marginHorizontal="10dp"/>
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/itemContenedor"
             android:layout_width="0dp"
             android:layout_height="40dp"
             app:layout_constraintStart_toEndOf="@id/contenedor"
@@ -253,13 +254,15 @@
             android:layout_marginVertical="10dp"/>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/botonUpdate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Modificar"
-            app:layout_constraintStart_toStartOf="@id/imagen"
-            app:layout_constraintEnd_toEndOf="@id/imagen"
-            app:layout_constraintTop_toBottomOf="@id/itemDescripcion"
-            android:layout_marginVertical="10dp"/>
+            android:src="@drawable/ic_check"
+            android:backgroundTint="@color/magenta"
+            app:layout_constraintEnd_toEndOf="@id/itemDescripcion"
+            app:layout_constraintBottom_toBottomOf="@id/itemDescripcion"
+            android:layout_marginVertical="30dp"/>
 
 
 

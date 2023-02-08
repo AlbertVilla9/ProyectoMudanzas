@@ -6,15 +6,18 @@ import androidx.lifecycle.ViewModel
 import com.example.proyectomudanzas.entities.Item
 import com.example.proyectomudanzas.mainModule.model.ItemsInteractor
 import com.example.proyectomudanzas.database.utils.Constants
+import com.example.proyectomudanzas.entities.Imagen
 
 class ItemsViewModel: ViewModel() {
     private var itemsList: MutableList<Item>
+    private var imagenesList: MutableList<Imagen>
     private var interactor: ItemsInteractor
     private var contenedorId: Int? = 0
 
     init {
         itemsList = mutableListOf()
         interactor = ItemsInteractor()
+        imagenesList = mutableListOf()
     }
 
     private val items: MutableLiveData<MutableList<Item>> by lazy {
@@ -41,6 +44,12 @@ class ItemsViewModel: ViewModel() {
 
             items.value = it
             itemsList = it
+            for (item in itemsList){
+                interactor.getImagen(item.id){
+                    imagenesList = it
+                }
+            }
+
         }
     }
 
